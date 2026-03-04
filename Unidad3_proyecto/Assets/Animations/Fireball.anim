@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 5353841184698615464, guid: defbcda6318133c45b98b758ae27af4f, type: 3}
-    - time: 0.18333334
+    - time: 0.16666667
       value: {fileID: 750297706712597742, guid: defbcda6318133c45b98b758ae27af4f, type: 3}
-    - time: 0.4
+    - time: 0.38333333
       value: {fileID: -8127487528002223245, guid: defbcda6318133c45b98b758ae27af4f, type: 3}
-    - time: 0.5833333
+    - time: 0.56666666
       value: {fileID: -3915765450054648673, guid: defbcda6318133c45b98b758ae27af4f, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.59999996
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,4 +78,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.56666666
+    functionName: DestroyFireBall
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: bc963ccf078cd4c4a9cd26e7e7eeaf89, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

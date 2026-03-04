@@ -31,4 +31,9 @@ public class FireballScript : MonoBehaviour
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
+
+    public void DestroyFireBall ()
+    {
+        Destroy(gameObject);
+    }
 }
