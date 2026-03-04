@@ -4,12 +4,14 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public GameObject FireballPrefab;
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private float Horizontal;
     [SerializeField] private float velocidad = 5f;
     public float JumpForce;
     private bool Grounded;
+    private float LastShoot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,8 +43,28 @@ public class CharacterMovement : MonoBehaviour
         {
             Jump();
         }
-    }
 
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && Time.time > LastShoot + 0.25f)
+        {
+            Shoot();
+            LastShoot = Time.time;
+        }
+    }
+    private void Shoot()
+    {
+        Vector3 direction;
+        if (transform.localScale.x == 1.0f) direction = Vector2.right;
+        else direction = Vector2.left;
+
+        GameObject fireball = Instantiate(FireballPrefab, transform.position + direction * 0.6f, Quaternion.identity);
+
+        Physics2D.IgnoreCollision(
+            fireball.GetComponent<Collider2D>(),
+            GetComponent<Collider2D>()
+        );
+
+        fireball.GetComponent<FireballScript>().SetDirection(direction);
+    }
     private void Jump()
     {
         Rigidbody2D.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
