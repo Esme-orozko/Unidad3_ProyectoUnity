@@ -43,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Jump();
         }
+        Animator.SetBool("grounded", Grounded);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame && Time.time > LastShoot + 0.25f)
         {
